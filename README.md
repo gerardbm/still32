@@ -1,10 +1,10 @@
-# Still32: dotfiles for Devuan 5 in 32 bits
+# Still32: dotfiles for Devuan 5 in 32-bit systems
 
 **Modern dotfiles for those machines that refuse to die. Still 32 bits. Still SysVinit. With Devuan 5.**
 
 This repository uses **stow** hierarchy: clone it into `$HOME` and use `stow --no-folding <package>` to create the symlinks automatically for each package. For more information about stow read its documentation: `stow(8)`.
 
-The content of this repository is a mix between my regular [dotfiles](https://github.com/gerardbm/dotfiles.git) and my vim setup ([vimrc](https://github.com/gerardbm/vimrc.git)), adapted to be used under 32 bits systems and refined to remain fast, stable and minimalist.
+The content of this repository is a mix between my regular [dotfiles](https://github.com/gerardbm/dotfiles.git) and my vim setup ([vimrc](https://github.com/gerardbm/vimrc.git)), adapted to be used under 32-bit systems and refined to remain fast, stable and minimalist.
 
 Configuration files:
 

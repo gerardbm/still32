@@ -53,31 +53,31 @@ endif
 
 " call AtomicSwitcher()
 
-AtomicSpaceMC
+" AtomicSpaceMC
 
 " Shortcuts
-nnoremap <S-F9> :call CycleModes()<CR>:colorscheme atomic<CR>
-nnoremap <Leader>1 :AtomicSpaceHC<CR>
-nnoremap <Leader>2 :AtomicSpaceMC<CR>
-nnoremap <Leader>3 :AtomicSpaceLC<CR>
-nnoremap <Leader>4 :AtomicNightHC<CR>
-nnoremap <Leader>5 :AtomicNightMC<CR>
-nnoremap <Leader>6 :AtomicNightLC<CR>
-nnoremap <Leader>7 :AtomicLightHC<CR>
-nnoremap <Leader>8 :AtomicLightMC<CR>
-nnoremap <Leader>9 :AtomicLightLC<CR>
-nnoremap <Leader><F1> :AtomicOnionHC<CR>
-nnoremap <Leader><F2> :AtomicOnionMC<CR>
-nnoremap <Leader><F3> :AtomicOnionLC<CR>
-nnoremap <Leader><F4> :AtomicBloodHC<CR>
-nnoremap <Leader><F5> :AtomicBloodMC<CR>
-nnoremap <Leader><F6> :AtomicBloodLC<CR>
-nnoremap <Leader><F7> :AtomicGrassHC<CR>
-nnoremap <Leader><F8> :AtomicGrassMC<CR>
-nnoremap <Leader><F9> :AtomicGrassLC<CR>
-nnoremap <Leader><F10> :AtomicOceanHC<CR>
-nnoremap <Leader><F11> :AtomicOceanMC<CR>
-nnoremap <Leader><F12> :AtomicOceanLC<CR>
+" nnoremap <S-F9> :call CycleModes()<CR>:colorscheme atomic<CR>
+" nnoremap <Leader>1 :AtomicSpaceHC<CR>
+" nnoremap <Leader>2 :AtomicSpaceMC<CR>
+" nnoremap <Leader>3 :AtomicSpaceLC<CR>
+" nnoremap <Leader>4 :AtomicNightHC<CR>
+" nnoremap <Leader>5 :AtomicNightMC<CR>
+" nnoremap <Leader>6 :AtomicNightLC<CR>
+" nnoremap <Leader>7 :AtomicLightHC<CR>
+" nnoremap <Leader>8 :AtomicLightMC<CR>
+" nnoremap <Leader>9 :AtomicLightLC<CR>
+" nnoremap <Leader><F1> :AtomicOnionHC<CR>
+" nnoremap <Leader><F2> :AtomicOnionMC<CR>
+" nnoremap <Leader><F3> :AtomicOnionLC<CR>
+" nnoremap <Leader><F4> :AtomicBloodHC<CR>
+" nnoremap <Leader><F5> :AtomicBloodMC<CR>
+" nnoremap <Leader><F6> :AtomicBloodLC<CR>
+" nnoremap <Leader><F7> :AtomicGrassHC<CR>
+" nnoremap <Leader><F8> :AtomicGrassMC<CR>
+" nnoremap <Leader><F9> :AtomicGrassLC<CR>
+" nnoremap <Leader><F10> :AtomicOceanHC<CR>
+" nnoremap <Leader><F11> :AtomicOceanMC<CR>
+" nnoremap <Leader><F12> :AtomicOceanLC<CR>
 
 " Paste ('p') from the clipboard
 set clipboard=unnamedplus

@@ -6,7 +6,7 @@
 "  (_)___/_/_/ /_/ /_/_/   \___/
 "
 "----------------------------------------------------------------
-"  Version : 2.9.12
+"  Version : 2.9.12-lite (simplified for 32-bit systems)
 "  License : MIT
 "  Author  : Gerard Bajona
 "  URL     : https://github.com/gerardbm/vimrc
@@ -70,11 +70,11 @@ nnoremap Q <NOP>
 cnoreabbrev help vert help
 
 " Terminal (nvim)
-if has("terminal") && has("nvim")
-	nnoremap <silent> <F7> :call <SID>ToggleTerminal()<CR>
-	tnoremap <silent> <F7> <C-\><C-n><Bar>:wincmd p<CR>
-	tnoremap <Esc> <C-\><C-n>
-endif
+" if has("terminal") && has("nvim")
+"   nnoremap <silent> <F7> :call <SID>ToggleTerminal()<CR>
+"   tnoremap <silent> <F7> <C-\><C-n><Bar>:wincmd p<CR>
+"   tnoremap <Esc> <C-\><C-n>
+" endif
 
 " Set inc/dec
 set nrformats-=octal
@@ -87,7 +87,6 @@ call plug#begin('~/.vim/plugged')
 
 	" Statusbar
 	Plug 'vim-airline/vim-airline'
-	" Plug 'vim-airline/vim-airline-themes'
 	Plug 'gerardbm/vim-airline-themes'
 
 	" Git tools
@@ -95,44 +94,45 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-fugitive'
 
 	" Sessions
-	Plug 'xolox/vim-session'
-	Plug 'xolox/vim-misc'
+	" Plug 'xolox/vim-session'
+	" Plug 'xolox/vim-misc'
 
 	" Tools
-	Plug 'preservim/nerdcommenter', { 'commit': 'a5d1663' }
+	Plug 'preservim/nerdcommenter'
 	Plug 'preservim/nerdtree'
 	Plug 'valloric/listtoggle'
-	Plug 'majutsushi/tagbar'
-	Plug 'dense-analysis/ale'
-	Plug 'junegunn/fzf'
-	Plug 'junegunn/fzf.vim'
+	" Plug 'majutsushi/tagbar'
+	" Plug 'dense-analysis/ale'
+	Plug 'junegunn/fzf', { 'tag': '0.47.0' }
+	Plug 'junegunn/fzf.vim', { 'commit': 'f5ba993' }
 
 	" Deoplete, specific for Vim8
-	if !has("nvim")
-		Plug 'roxma/nvim-yarp'
-		Plug 'roxma/vim-hug-neovim-rpc'
-	endif
+	" if !has("nvim")
+	"   Plug 'roxma/nvim-yarp'
+	"   Plug 'roxma/vim-hug-neovim-rpc'
+	" endif
 
 	" Autocomplete
-	Plug 'Shougo/deoplete.nvim', { 'commit': '17ffeb9' }
-	Plug 'Shougo/neosnippet.vim', { 'commit': '037b7a7' }
-	Plug 'Shougo/neosnippet-snippets'
-	Plug 'Shougo/context_filetype.vim', { 'commit': 'e276626' }
-	Plug 'ervandew/supertab'
+	" Plug 'Shougo/deoplete.nvim', { 'commit': '17ffeb9' }
+	" Plug 'Shougo/neosnippet.vim', { 'commit': '037b7a7' }
+	" Plug 'Shougo/neosnippet-snippets'
+	" Plug 'Shougo/context_filetype.vim', { 'commit': 'e276626' }
+	" Plug 'ervandew/supertab'
 
 	" C/C++ support
-	Plug 'deoplete-plugins/deoplete-clang', { 'commit': '30f17cb' }
+	" Plug 'deoplete-plugins/deoplete-clang', { 'commit': '30f17cb' }
 
 	" Go support
-	Plug 'fatih/vim-go', { 'tag': 'v1.19' }
+	" Plug 'fatih/vim-go', { 'tag': 'v1.19' }
+	Plug 'fatih/vim-go',
 	Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-	Plug 'deoplete-plugins/deoplete-go', { 'commit': 'fa73f06'}
+	" Plug 'deoplete-plugins/deoplete-go', { 'commit': 'fa73f06'}
 
 	" Perl support
 	Plug 'c9s/perlomni.vim'
 
 	" Python support
-	Plug 'deoplete-plugins/deoplete-jedi', { 'commit': '46121d9' }
+	" Plug 'deoplete-plugins/deoplete-jedi', { 'commit': '46121d9' }
 
 	" Ruby support
 	Plug 'vim-ruby/vim-ruby'
@@ -141,32 +141,32 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-liquid'
 
 	" PHP support
-	Plug 'shawncplus/phpcomplete.vim'
+	" Plug 'shawncplus/phpcomplete.vim'
 
 	" Haskell support
-	Plug 'eagletmt/neco-ghc'
+	" Plug 'eagletmt/neco-ghc'
 
 	" Rust support
-	Plug 'racer-rust/vim-racer'
+	" Plug 'racer-rust/vim-racer'
 
 	" Zsh support
-	Plug 'deoplete-plugins/deoplete-zsh', { 'commit': '12141ad' }
+	" Plug 'deoplete-plugins/deoplete-zsh', { 'commit': '12141ad' }
 
 	" JavaScript support
 	Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-	Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 	Plug 'othree/jspc.vim'
-	Plug 'maksimr/vim-jsbeautify'
+	" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+	" Plug 'maksimr/vim-jsbeautify'
 
 	" VimL support
-	Plug 'Shougo/neco-vim', { 'commit' : '4c0203b' }
+	" Plug 'Shougo/neco-vim', { 'commit' : '4c0203b' }
 
 	" Additional syntax files
 	Plug 'othree/html5.vim'
 	Plug 'vim-language-dept/css-syntax.vim'
 	Plug 'hail2u/vim-css3-syntax'
 	Plug 'pangloss/vim-javascript'
-	Plug 'Shougo/neco-syntax', { 'commit': '98cba4a' }
+	" Plug 'Shougo/neco-syntax', { 'commit': '98cba4a' }
 	Plug 'mboughaba/i3config.vim'
 	Plug 'aklt/plantuml-syntax'
 	Plug 'gerardbm/asy.vim'
@@ -193,14 +193,14 @@ call plug#begin('~/.vim/plugged')
 
 	" Misc
 	Plug 'christoomey/vim-tmux-navigator'
-	Plug 'tpope/vim-characterize'
-	Plug 'tyru/open-browser.vim'
-	Plug 'junegunn/goyo.vim'
-	Plug 'mattn/webapi-vim'
-	Plug 'mattn/emmet-vim'
+	" Plug 'tpope/vim-characterize'
+	" Plug 'tyru/open-browser.vim'
+	" Plug 'junegunn/goyo.vim'
+	" Plug 'mattn/webapi-vim'
+	" Plug 'mattn/emmet-vim'
 	Plug 'vimwiki/vimwiki', { 'branch': 'master' }
 	Plug 'mbbill/undotree'
-	Plug 'chrisbra/colorizer'
+	" Plug 'chrisbra/colorizer'
 
 	" Color schemes
 	Plug 'gerardbm/vim-atomic'
@@ -249,9 +249,9 @@ nnoremap <Leader>gg :call <SID>GrepWrapper('Gclog', '-i -G', '--')<CR>
 
 " --- Sessions ---
 " Vim-session settings
-let g:session_autosave  = 'no'
-let g:session_autoload  = 'no'
-let g:session_directory = '~/.vim/sessions/'
+" let g:session_autosave  = 'no'
+" let g:session_autoload  = 'no'
+" let g:session_directory = '~/.vim/sessions/'
 
 " --- Tools ---
 " NERDCommenter settings
@@ -271,23 +271,23 @@ vnoremap cc :call NERDComment(0,'toggle')<CR>
 nnoremap <silent> <C-n> :call <SID>ToggleNERDTree()<CR>
 
 " ALE settings
-let g:ale_linters = {
-	\ 'c'          : ['clang'],
-	\ 'vim'        : ['vint'],
-	\ 'python'     : ['pylint'],
-	\ 'javascript' : ['jshint'],
-	\ 'css'        : ['csslint'],
-	\ 'tex'        : ['chktex'],
-	\ }
+" let g:ale_linters = {
+"   \ 'c'          : ['clang'],
+"   \ 'vim'        : ['vint'],
+"   \ 'python'     : ['pylint'],
+"   \ 'javascript' : ['jshint'],
+"   \ 'css'        : ['csslint'],
+"   \ 'tex'        : ['chktex'],
+"   \ }
 
-let g:ale_linters_ignore = {
-	\ 'markdown' : ['proselint'],
-	\ 'vimwiki'  : ['proselint'],
-	\}
+" let g:ale_linters_ignore = {
+"   \ 'markdown' : ['proselint'],
+"   \ 'vimwiki'  : ['proselint'],
+"   \}
 
-let g:ale_sign_error='✗'
-let g:ale_sign_warning='•'
-let g:ale_sign_info='ℹ'
+" let g:ale_sign_error='✗'
+" let g:ale_sign_warning='•'
+" let g:ale_sign_info='ℹ'
 
 " FZF settings
 let $FZF_DEFAULT_COMMAND = "ag --hidden --ignore .git -p ~/.gitignore -g ''"
@@ -317,13 +317,13 @@ let g:lt_location_list_toggle_map = '<leader>e'
 let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 " Tagbar toggle (custom function)
-nnoremap <silent> <C-t> :call <SID>ToggleTagbar()<CR>
-let g:tagbar_autofocus        = 1
-let g:tagbar_show_linenumbers = 2
-let g:tagbar_sort             = 0
+" nnoremap <silent> <C-t> :call <SID>ToggleTagbar()<CR>
+" let g:tagbar_autofocus        = 1
+" let g:tagbar_show_linenumbers = 2
+" let g:tagbar_sort             = 0
 
 " Undotree toggle
-nnoremap <Leader>U :UndotreeToggle<CR>
+" nnoremap <Leader>U :UndotreeToggle<CR>
 
 " --- Languages ---
 " Go settings
@@ -335,7 +335,7 @@ let g:go_highlight_operators         = 1
 let g:go_highlight_build_constraints = 1
 let g:go_bin_path                    = expand('~/.gotools')
 let g:go_list_type                   = 'quickfix'
-let g:go_version_warning             = 0 " Keep until vim v8.0.1453, nvim v3.2
+" let g:go_version_warning             = 0 " Keep until vim v8.0.1453, nvim v3.2
 
 " CSS3 settings
 augroup VimCSS3Syntax
@@ -353,77 +353,77 @@ let g:tern#command   = ['tern']
 let g:tern#arguments = ['--persistent']
 
 " JS-Beautify
-let g:config_Beautifier = {}
-let g:config_Beautifier['js'] = {}
-let g:config_Beautifier['js'].indent_style = 'tab'
-let g:config_Beautifier['jsx'] = {}
-let g:config_Beautifier['jsx'].indent_style = 'tab'
-let g:config_Beautifier['json'] = {}
-let g:config_Beautifier['json'].indent_style = 'tab'
-let g:config_Beautifier['css'] = {}
-let g:config_Beautifier['css'].indent_style = 'tab'
-let g:config_Beautifier['html'] = {}
-let g:config_Beautifier['html'].indent_style = 'tab'
+" let g:config_Beautifier = {}
+" let g:config_Beautifier['js'] = {}
+" let g:config_Beautifier['js'].indent_style = 'tab'
+" let g:config_Beautifier['jsx'] = {}
+" let g:config_Beautifier['jsx'].indent_style = 'tab'
+" let g:config_Beautifier['json'] = {}
+" let g:config_Beautifier['json'].indent_style = 'tab'
+" let g:config_Beautifier['css'] = {}
+" let g:config_Beautifier['css'].indent_style = 'tab'
+" let g:config_Beautifier['html'] = {}
+" let g:config_Beautifier['html'].indent_style = 'tab'
 
-augroup beautify
-	autocmd!
-	autocmd FileType javascript nnoremap <buffer> <Leader>bf :call JsBeautify()<cr>
-	autocmd FileType javascript vnoremap <buffer> <Leader>bf :call RangeJsBeautify()<cr>
-	autocmd FileType json nnoremap <buffer> <Leader>bf :call JsonBeautify()<cr>
-	autocmd FileType json vnoremap <buffer> <Leader>bf :call RangeJsonBeautify()<cr>
-	autocmd FileType jsx nnoremap <buffer> <Leader>bf :call JsxBeautify()<cr>
-	autocmd FileType jsx vnoremap <buffer> <Leader>bf :call RangeJsxBeautify()<cr>
-	autocmd FileType html nnoremap <buffer> <Leader>bf :call HtmlBeautify()<cr>
-	autocmd FileType html vnoremap <buffer> <Leader>bf :call RangeHtmlBeautify()<cr>
-	autocmd FileType css nnoremap <buffer> <Leader>bf :call CSSBeautify()<cr>
-	autocmd FileType css vnoremap <buffer> <Leader>bf :call RangeCSSBeautify()<cr>
-augroup end
+" augroup beautify
+"   autocmd!
+"   autocmd FileType javascript nnoremap <buffer> <Leader>bf :call JsBeautify()<cr>
+"   autocmd FileType javascript vnoremap <buffer> <Leader>bf :call RangeJsBeautify()<cr>
+"   autocmd FileType json nnoremap <buffer> <Leader>bf :call JsonBeautify()<cr>
+"   autocmd FileType json vnoremap <buffer> <Leader>bf :call RangeJsonBeautify()<cr>
+"   autocmd FileType jsx nnoremap <buffer> <Leader>bf :call JsxBeautify()<cr>
+"   autocmd FileType jsx vnoremap <buffer> <Leader>bf :call RangeJsxBeautify()<cr>
+"   autocmd FileType html nnoremap <buffer> <Leader>bf :call HtmlBeautify()<cr>
+"   autocmd FileType html vnoremap <buffer> <Leader>bf :call RangeHtmlBeautify()<cr>
+"   autocmd FileType css nnoremap <buffer> <Leader>bf :call CSSBeautify()<cr>
+"   autocmd FileType css vnoremap <buffer> <Leader>bf :call RangeCSSBeautify()<cr>
+" augroup end
 
 " --- Autocomplete ---
 " SuperTab settings
-let g:SuperTabDefaultCompletionType = '<TAB>'
+" let g:SuperTabDefaultCompletionType = '<TAB>'
 
 " Deoplete settings
 " - «Deoplete requires Neovim with Python3 enabled»
-let g:python3_host_prog       = '/usr/bin/python3'
-let g:python3_host_skip_check = 1
+" let g:python3_host_prog       = '/usr/bin/python3'
+" let g:python3_host_skip_check = 1
 
-autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#omni#functions    = {}
-call deoplete#custom#option('auto_complete_delay', 250)
+" autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_smart_case = 1
+" let g:deoplete#omni#functions    = {}
+" call deoplete#custom#option('auto_complete_delay', 250)
 
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Python autocompletion
-let g:deoplete#sources#jedi#show_docstring = 1
+" let g:deoplete#sources#jedi#show_docstring = 1
 
 " Go autocompletion
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class    = ['package', 'func', 'type', 'var', 'const']
-let g:deoplete#sources#go#use_cache     = 1
+" let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+" let g:deoplete#sources#go#sort_class    = ['package', 'func', 'type', 'var', 'const']
+" let g:deoplete#sources#go#use_cache     = 1
 
 " Javascript autocompletion
-let g:deoplete#omni#functions.javascript = [
-	\ 'tern#Complete',
-	\ 'jspc#omni',
-	\ ]
+" let g:deoplete#omni#functions.javascript = [
+"   \ 'tern#Complete',
+"   \ 'jspc#omni',
+"   \ ]
 
 " Clang autocompletion
-let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-4.0/lib/libclang.so'
-let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+" let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-4.0/lib/libclang.so'
+" let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
 
 " --- Snippets ---
 " Neosnippet settings
-imap <C-s> <Plug>(neosnippet_expand_or_jump)
-smap <C-s> <Plug>(neosnippet_expand_or_jump)
-xmap <C-s> <Plug>(neosnippet_expand_target)
+" imap <C-s> <Plug>(neosnippet_expand_or_jump)
+" smap <C-s> <Plug>(neosnippet_expand_or_jump)
+" xmap <C-s> <Plug>(neosnippet_expand_target)
 
 " Behaviour like SuperTab
-smap <expr><TAB>
-	\ neosnippet#expandable_or_jumpable() ?
-	\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB>
+"   \ neosnippet#expandable_or_jumpable() ?
+"   \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers
 if has('conceal')
@@ -434,9 +434,9 @@ if has('conceal')
 	nnoremap <silent> com :set conceallevel=3<CR>:set concealcursor=niv<CR>
 endif
 
-augroup all
-	autocmd InsertLeave * NeoSnippetClearMarkers
-augroup end
+" augroup all
+"   autocmd InsertLeave * NeoSnippetClearMarkers
+" augroup end
 
 " --- Edition ---
 " Easy align settings
@@ -513,19 +513,19 @@ let g:move_key_modifier_visualmode = 'S'
 let g:tmux_navigator_no_mappings = 1
 
 " Open-browser settings
-let g:openbrowser_browser_commands = [{
-	\ 'name': 'w3m',
-	\ 'args': 'tmux new-window w3m {uri}',
-	\ }]
+" let g:openbrowser_browser_commands = [{
+"   \ 'name': 'w3m',
+"   \ 'args': 'tmux new-window w3m {uri}',
+"   \ }]
 
-nmap <Leader>gl <Plug>(openbrowser-open)
+" nmap <Leader>gl <Plug>(openbrowser-open)
 
 " Goyo settings
-let g:goyo_width  = "80"
-let g:goyo_height = "100%"
-let g:goyo_linenr = 1
+" let g:goyo_width  = "80"
+" let g:goyo_height = "100%"
+" let g:goyo_linenr = 1
 
-nnoremap <F11> :Goyo<CR>
+" nnoremap <F11> :Goyo<CR>
 
 " Vimwiki settings
 let g:vimwiki_url_maxsave   = 0
