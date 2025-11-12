@@ -1,21 +1,14 @@
-# ~/dotfiles for Debian and i3wm
+# Still32: dotfiles for Devuan 5 in 32 bits
 
-![screenshot01](https://github.com/gerardbm/dotfiles/blob/master/images/Cosmic-Lunar-Mode.png)
-
-![screenshot02](https://github.com/gerardbm/dotfiles/blob/master/images/Cosmic-Solar-Mode.png)
+**Modern dotfiles for those machines that refuse to die. Still using 32 bits. Still using SysVinit. Still free. Using Devuan 5.**
 
 This repository uses **stow** hierarchy: clone it into `$HOME` and use `stow --no-folding <package>` to create the symlinks automatically for each package. For more information about stow read its documentation: `stow(8)`.
-
-Color schemes and vim/neovim files are not into this repository. Find them into:
-
-- Color schemes: [cosmic](https://github.com/gerardbm/cosmic)
-- Vim/neovim: [vimrc](https://github.com/gerardbm/vimrc)
 
 Configuration files:
 
 ```
-- Distro      : Debian
-- WM          : i3-wm (i3-gaps)
+- Distro      : Devuan
+- WM          : i3
 - Menu        : rofi
 - Shell       : zsh
 - Terminal    : urxvt, xterm
@@ -39,7 +32,7 @@ Configuration files:
 
 ## Setup
 
-### Debian
+### Devuan
 
 **Add the user to the sudoers file**
 
@@ -65,9 +58,11 @@ Configuration files:
 
 `autologin-user=<user>`
 
-### i3-wm
+### i3
 
-Install [i3-radius](https://github.com/terroo/i3-radius). It's i3-wm with gaps and rounded corners. Just clone the linked repository and run `sh build.sh`. From the i3-wm version 4.22, i3-gaps settings will be included.
+Install it from the repositories:
+
+`sudo apt-get install i3`
 
 Make sure you have installed the following libraries, which are a requirement to run my setup properly:
 
@@ -85,6 +80,8 @@ Make sure you have installed the following libraries, which are a requirement to
 - wicd: Wired and wireless network connection manager.
 - xbacklight: adjust backlight brightness using RandR extension.
 - xsel: command-line tool to manipulate the X selection.
+- xsct: set screen color temperature.
+- xcalib: tiny monitor calibration loader.
 
 Optional:
 - arandr: can be useful to generate xrandr \*.sh scripts.
@@ -268,7 +265,7 @@ Install clang from the repositories:
 
 `sudo apt-get install clang libclang-dev`
 
-The package `libclang-dev` is required on Debian.
+The package `libclang-dev` is required on Devuan.
 
 ### Golang
 
@@ -588,9 +585,9 @@ Update it to the last version:
 
 `sudo -H pip install --upgrade youtube-dl`
 
-### VirtualBox
+<!-- ### VirtualBox -->
 
-Packages for VirtualBox are not available in Debian 9. To install VirtualBox you must use the stretch-backports repository or the upstream third-party repository. More info, here: https://wiki.debian.org/VirtualBox.
+<!-- Packages for VirtualBox are not available in Debian 9. To install VirtualBox you must use the stretch-backports repository or the upstream third-party repository. More info, here: https://wiki.debian.org/VirtualBox. -->
 
 ## Navigation
 
@@ -767,4 +764,4 @@ Video:
 
 Yes, a mouse would make the life easier. And slower ;-)
 
-This setup works in Debian 9 or later.
+This setup works in Devuan 5.
