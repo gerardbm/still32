@@ -77,10 +77,7 @@ export EDITOR='vim'
 export PATH="$HOME/.local/bin:$PATH"
 
 # npm path
-# export PATH="$HOME/.npm-global/bin:$PATH"
-
-# QCAD path
-# export PATH="/opt/qcad:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
 
 # Golang path
 # export GOPATH="$HOME/Workspace/goprojects"
