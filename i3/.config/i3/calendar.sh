@@ -4,7 +4,7 @@
 # It works through ncal.
 #
 # Full configuration is available in this repository:
-# URL: https://github.com/gerardbm/dotfiles
+# URL: https://github.com/gerardbm/still32
 
 urxvt -name 'cal' \
 	-b 15 \

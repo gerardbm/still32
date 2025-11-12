@@ -8,7 +8,7 @@
 # - To change the settings during an Xsession I use the tool lxrandr.
 #
 # Full configuration is available in this repository:
-# URL: https://github.com/gerardbm/dotfiles
+# URL: https://github.com/gerardbm/still32
 
 for output in $(xrandr | grep '\Wconnected' | awk '{ print $1 }'); do
 	if [[ $output =~ ^LVDS.*$ ]]; then

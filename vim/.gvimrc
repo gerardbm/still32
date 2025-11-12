@@ -53,7 +53,7 @@ endif
 
 " call AtomicSwitcher()
 
-" AtomicSpaceMC
+AtomicSpaceMC
 
 " Shortcuts
 " nnoremap <S-F9> :call CycleModes()<CR>:colorscheme atomic<CR>

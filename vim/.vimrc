@@ -9,7 +9,7 @@
 "  Version : 2.9.12-lite (simplified for 32-bit systems)
 "  License : MIT
 "  Author  : Gerard Bajona
-"  URL     : https://github.com/gerardbm/vimrc
+"  URL     : https://github.com/gerardbm/still32
 "----------------------------------------------------------------
 "  Index:
 "   1. General settings
@@ -821,8 +821,7 @@ nnoremap <silent> <C-w>o :wincmd o<CR>:echo "Only one window."<CR>
 
 " Move between Vim windows and Tmux panes
 " - It requires the corresponding configuration into Tmux.
-" - Check it at my .tmux.conf from my dotfiles repository.
-" - URL: https://github.com/gerardbm/dotfiles/blob/master/tmux/.tmux.conf
+" - URL: https://github.com/gerardbm/still32/blob/master/tmux/.tmux.conf
 " - Plugin required: https://github.com/christoomey/vim-tmux-navigator
 if !has("nvim")
 	set <M-h>=h

@@ -4,7 +4,7 @@
 # It works through i3wm, notify-osd and dunst.
 #
 # Full configuration is available in this repository:
-# URL: https://github.com/gerardbm/dotfiles
+# URL: https://github.com/gerardbm/still32
 
 if ! pgrep -x "cmus" > /dev/null
 then

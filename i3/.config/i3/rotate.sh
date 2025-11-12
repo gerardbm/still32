@@ -4,7 +4,7 @@
 # It works through i3wm and xrandr.
 #
 # Full configuration is available in this repository:
-# URL: https://github.com/gerardbm/dotfiles
+# URL: https://github.com/gerardbm/still32
 
 OUTPUT=$(xrandr | grep '\Wconnected' | awk '{ print $1 }')
 xrandr --output "$OUTPUT" --rotate "$1"

@@ -4,7 +4,7 @@
 # It works through i3wm, notify-osd and dunst.
 #
 # Full configuration is available in this repository:
-# URL: https://github.com/gerardbm/dotfiles
+# URL: https://github.com/gerardbm/still32
 
 GETVAL=$(xbacklight -get | awk '{printf "%.0f\n", $1}')
 
