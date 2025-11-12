@@ -1,0 +1,278 @@
+! ------------------------------------------------------------
+! XFT
+! ------------------------------------------------------------
+
+Xft.dpi       : 96
+Xft.antialias : true
+Xft.hinting   : true
+Xft.rgba      : rgb
+Xft.autohint  : false
+Xft.hintstyle : hintfull
+Xft.lcdfilter : lcddefault
+
+! ------------------------------------------------------------
+! Variables
+! ------------------------------------------------------------
+
+! Atomic Space MC
+#include ".Xresources.d/Xresources.scheme"
+#include ".Xresources.d/Xresources.cosmic"
+#include ".Xresources.d/Xresources.fonts"
+
+*.foreground  : base4
+*.background  : base1
+*.cursorColor : base4
+
+*.color0  : base1
+*.color1  : acr50
+*.color2  : acg50
+*.color3  : aco50
+*.color4  : acb50
+*.color5  : acv50
+*.color6  : acc50
+*.color7  : base3
+*.color8  : base2
+*.color9  : acr70
+*.color10 : acg70
+*.color11 : aco70
+*.color12 : acb70
+*.color13 : acv70
+*.color14 : acc70
+*.color15 : base4
+
+! Manpage colors
+*.colorIT : acr70
+*.colorBD : acc70
+*.colorUL : acb70
+
+! Transparency not used
+! URxvt*transparent: true
+! URxvt*shading: 30
+! URxvt*blurRadius: 50
+
+! ------------------------------------------------------------
+! URxvt
+! ------------------------------------------------------------
+
+URxvt*termName       : screen-256color
+URxvt*font           : xft:Terminess Powerline:size=13,xft:TerminessTTF Nerd Font Mono
+!
+! Terminus italics are ugly, so I do not use them.
+!
+! URxvt*boldFont       : xft:Terminus:size=12:bold
+! URxvt*italicFont     : xft:Terminus:size=12:italic
+! URxvt*boldItalicFont : xft:Terminus:size=12:bold:italic
+!
+URxvt*letterSpace    : 0
+URxvt*internalBorder : 1
+URxvt*scrollBar      : false
+URxvt*pointerBlank   : true
+URxvt*hold           : false
+URxvt*iso14755       : false
+URxvt*iso14755_52    : false
+URxvt*loginShell     : true
+URxvt*buffered       : true
+URxvt*depth          : 32
+URxvt*foreground     : base4
+URxvt*background     : base1
+URxvt*borderColor    : base1
+URxvt*cursorColor    : base4
+
+! Keysyms
+URxvt*keysym.Home    : \033[1~
+URxvt*keysym.End     : \033[4~
+URxvt*keysym.KP_Home : \033[1~
+URxvt*keysym.KP_End  : \033[4~
+
+! URxvt*keysym.F1   : \033[11~
+! URxvt*keysym.F2   : \033[12~
+! URxvt*keysym.F3   : \033[13~
+! URxvt*keysym.F4   : \033[14~
+! URxvt*keysym.F5   : \033[15~
+! URxvt*keysym.F6   : \033[17~
+! URxvt*keysym.F7   : \033[18~
+! URxvt*keysym.F8   : \033[19~
+! URxvt*keysym.F9   : \033[20~
+! URxvt*keysym.F10  : \033[21~
+! URxvt*keysym.F11  : \033[23~
+! URxvt*keysym.F12  : \033[24~
+
+URxvt*keysym.S-F1  : \033[11;2~
+URxvt*keysym.S-F2  : \033[12;2~
+URxvt*keysym.S-F3  : \033[13;2~
+URxvt*keysym.S-F4  : \033[14;2~
+URxvt*keysym.S-F5  : \033[15;2~
+URxvt*keysym.S-F6  : \033[17;2~
+URxvt*keysym.S-F7  : \033[18;2~
+URxvt*keysym.S-F8  : \033[19;2~
+URxvt*keysym.S-F9  : \033[20;2~
+URxvt*keysym.S-F10 : \033[21;2~
+URxvt*keysym.S-F11 : \033[23;2~
+URxvt*keysym.S-F12 : \033[24;2~
+
+! Scroll 1 line
+URxvt*keysym.Control-K: command:\033]720;1\007
+URxvt*keysym.Control-J: command:\033]721;1\007
+
+! Scroll 8 lines
+URxvt*keysym.Control-P: command:\033]720;8\007
+URxvt*keysym.Control-N: command:\033]721;8\007
+
+! Default transparency
+URxvt*color0 : base1
+
+! ------------------------------------------------------------
+! URxvt plugins
+! ------------------------------------------------------------
+
+! Perl extensions
+URxvt.perl-ext             : default,url-select,resize-font,unichr,clipboard
+
+! Plugin: url-select
+URxvt.keysym.Control-O     : perl:url-select:select_next
+URxvt.url-select.launcher  : tmux new-window w3m
+URxvt.url-select.underline : true
+URxvt.clipboard.autocopy   : true
+URxvt.keysym.Control-V     : perl:clipboard:paste
+URxvt.keysym.Control-C     : perl:clipboard:copy
+! Press 'y' to copy the selected URL to PRIMARY and clipboard
+
+! Plugin: resize-font
+URxvt.keysym.Control-H : resize-font:smaller
+URxvt.keysym.Control-L : resize-font:bigger
+URxvt.keysym.Control-R : resize-font:reset
+
+! ------------------------------------------------------------
+! XTerm
+! ------------------------------------------------------------
+
+xterm*termName        : screen-256color
+xterm*renderFont      : true
+xterm*faceName        : Terminess Powerline
+xterm*faceSize        : 13
+xterm*locale          : true
+xterm*metaSendsEscape : true
+xterm*eightBitInput   : false
+xterm*eightBitControl : false
+xterm*eightBitOutput  : true
+xterm*loginShell      : true
+xterm*scrollBar       : false
+xterm*saveLines       : 4096
+xterm*utf8            : 2
+xterm*jumpScroll      : true
+xterm*multiScroll     : true
+xterm*trimSelection   : true
+xterm*allowFontOps    : true
+xterm*allowColorOps   : true
+
+xterm*cursorUnderline : true
+xterm*cursorBlink     : false
+xterm*dynamicColors   : true
+xterm*boldMode        : true
+xterm*colorBDMode     : false
+
+xterm*background  : base1
+xterm*foreground  : base4
+xterm*cursorColor : base4
+
+xterm*color0  : base1
+xterm*color1  : acr50
+xterm*color2  : acg50
+xterm*color3  : aco50
+xterm*color4  : acb50
+xterm*color5  : acv50
+xterm*color6  : acc50
+xterm*color7  : base3
+xterm*color8  : base2
+xterm*color9  : acr70
+xterm*color10 : acg70
+xterm*color11 : aco70
+xterm*color12 : acb70
+xterm*color13 : acv70
+xterm*color14 : acc70
+xterm*color15 : base4
+
+xterm*colorIT : acr70
+xterm*colorBD : acc70
+xterm*colorUL : acb70
+
+xterm*VT100.Translations: #override \
+	Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>H: smaller-vt-font() \n\
+	Ctrl Shift <Key>L: larger-vt-font() \n\
+	Ctrl Shift <Key>R: set-vt-font(d)
+
+xterm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
+
+! ------------------------------------------------------------
+! Rofi
+! ------------------------------------------------------------
+
+rofi.modi              : run,window
+rofi.terminal          : /usr/bin/urxvtc
+rofi.run-shell-command : /usr/bin/urxvtc -e '{cmd}'
+rofi.ssh-command       : tmux split-window -h -p 50 '{ssh-client} {host}'
+rofi.sidebar-mode      : true
+rofi.fuzzy             : true
+rofi.font              : Terminus\ 13
+rofi.location          : 0
+rofi.width             : 32
+rofi.padding           : 2
+rofi.borderwidth       : 1
+rofi.columns           : 1
+rofi.lines             : 8
+rofi.separator-style   : none
+
+! Key bindings
+rofi.kb-accept-entry        : Control+m,Return,KP_Enter
+rofi.kb-cancel              : Escape,Control+c
+rofi.kb-mode-next           : Control+l
+rofi.kb-mode-previous       : Control+h
+rofi.kb-row-down            : Control+j
+rofi.kb-row-up              : Control+k
+rofi.kb-remove-to-eol       : Control+y
+rofi.kb-remove-to-sol       : Control+u
+rofi.kb-remove-char-back    : Control+s,BackSpace
+rofi.kb-remove-char-forward : Control+d,Delete
+
+! Colors            bg     fg     altbg  hlbg   hlfg
+rofi.color-normal : base1, base4, base1, base2, acc50
+rofi.color-urgent : base1, acg50, base2, base1, acc50
+rofi.color-active : base1, acg50, base2, base2, acg50
+rofi.color-window : base1, acc50, base3
+rofi.bw           : 1
+
+! ------------------------------------------------------------
+! Information
+! ------------------------------------------------------------
+
+! XTerm escape sequences
+! 10;  = base4 (foreground)
+! 11;  = base1 (background)
+! 12;  = base4 (cursorColor)
+! 704; = acr70 (italic)
+! 706; = acc70 (bold)
+! 707; = acb70 (underlined)
+! 708; = base1 (borderColor)
+! 4;1  = acr50
+! 4;2  = acg50
+! 4;3  = aco50
+! 4;4  = acb50
+! 4;5  = acv50
+! 4;6  = acc50
+! 4;7  = base3
+! 4;8  = base2
+! 4;9  = acr70
+! 4;10 = acg70
+! 4;11 = aco70
+! 4;12 = acb70
+! 4;13 = acv70
+! 4;14 = acc70
+! 4;15 = base4
+! 710; = set normal font
+! 711; = set bold font
+! 712; = set italic font
+! 713; = set bold italic font
+!
+! For more information, see 'man 7 urxvt'

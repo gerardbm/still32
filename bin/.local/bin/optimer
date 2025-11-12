@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+# Version: 2.0.0
+#
+# Description: Resize and compress PNG and JPG/JPEG files
+#
+# Tools used:
+# - convert
+# - identify
+# - optipng
+# - pngcrush
+# - jpegoptim
+# - jpegtran
+
+if [ "$1" == "-h" ]; then
+cat <<EOF
+Optimer: Resize and compress PNG and JPG/JPEG files
+
+Usage: optimer <integer> <filename1> <filename2>...
+
+	- integer → the new width for the compressed file.
+	- filename → a list of files to compress.
+
+Example: optimer 500 picture.png figure.jpeg image.jpg
+
+Resize is done with convert(1).
+PNG compression is done with optipng(1) and pngcrush(1).
+JPEG compression is done with jpegoptim(1) and jpegtran(1).
+EOF
+exit 1
+fi
+
+NEW_WIDTH="$1"
+
+if ! [[ "$NEW_WIDTH" =~ ^[0-9]+$ ]] ; then
+	echo "Error: first option must be an integer: image width in pixels."
+	echo "Usage: optimer <integer> <filename> <filename2>..." >&2; exit 1
+fi
+
+if ! [[ "$NEW_WIDTH" -gt 0 ]] ; then
+	echo "Error: first option must be an integer greater than 0."
+	echo "Usage: optimer <integer> <filename1> <filename2>..." >&2; exit 1
+fi
+
+for f in "${@:2}"; do
+	NAME="${f%%.*}"
+	EXT="${f##*.}"
+	INITIAL_WIDTH="$(identify -format '%w' "$f")"
+	RESIZED="${NAME}-.${EXT}"
+
+	if [[ "$INITIAL_WIDTH" -gt "$NEW_WIDTH" ]] ; then
+		convert "$f" -resize "$NEW_WIDTH" "$RESIZED"
+	else
+		cp "$f" "$RESIZED"
+	fi
+
+	DIMS="$(identify -format '%wx%h' "$RESIZED" 2>/dev/null)"
+	RENAMED="${NAME}-${DIMS}.${EXT}"
+
+	mv "$RESIZED" "$RENAMED"
+
+	if [[ ${EXT,,} == "png" ]] ; then
+		echo "Optimizing PNG-image: $RENAMED"
+		optipng -o1 --quiet "$RENAMED"
+		pngcrush -q "$RENAMED" /tmp/$$; mv /tmp/$$ "$RENAMED"
+	fi
+
+	if [[ "${EXT,,}" =~ (jpg|jpeg) ]] ; then
+		echo "Optimizing $EXT-image: $RENAMED"
+		jpegoptim --max=80 "$RENAMED"
+		jpegtran -copy none -optimize -outfile "$RENAMED" "$RENAMED"
+	fi
+
+done

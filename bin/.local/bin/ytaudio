@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# Description: extract audio from a Youtube video.
+
+yt-dlp --extract-audio --audio-format mp3 $1

@@ -1,0 +1,44 @@
+; user {{{
+[user]
+	email = gerardbajona@gmail.com
+	name = Gerard
+; }}}
+; core {{{
+[core]
+	editor    = nvim
+	pager     = less -x4
+; }}}
+; alias {{{
+[alias]
+	lod       = log --oneline --decorate --all --graph
+	lol       = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr)'
+	loa       = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %C(green)(%cr) %C(cyan)[%an]'
+; }}}
+; color {{{
+[color]
+	branch    = auto
+	diff      = auto
+	status    = auto
+; }}}
+; color diff {{{
+[color "diff"]
+	meta      = yellow
+	frag      = cyan
+	old       = red
+	new       = green
+; }}}
+; color status {{{
+[color "status"]
+	added     = green
+	changed   = red
+	unmerged  = yellow
+	untracked = magenta
+; }}}
+; color branch {{{
+[color "branch"]
+	current   = green
+	local     = blue
+	remote    = magenta
+; }}}
+[credential]
+	helper = cache --timeout 3600

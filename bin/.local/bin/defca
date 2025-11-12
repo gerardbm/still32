@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+# Description: get definition from diccionari.cat
+
+ICONV=$(iconv -t ASCII//TRANSLIT <<< "$1")
+# URL=$(perl -MLWP::Simple -e "getprint 'https://www.diccionari.cat/GDLC/$ICONV'")
+w3m "https://www.diccionari.cat/GDLC/$ICONV"
