@@ -1,8 +1,10 @@
 # Still32: dotfiles for Devuan 5 in 32 bits
 
-**Modern dotfiles for those machines that refuse to die. Still using 32 bits. Still using SysVinit. Still free. Using Devuan 5.**
+**Modern dotfiles for those machines that refuse to die. Still 32 bits. Still SysVinit. With Devuan 5.**
 
 This repository uses **stow** hierarchy: clone it into `$HOME` and use `stow --no-folding <package>` to create the symlinks automatically for each package. For more information about stow read its documentation: `stow(8)`.
+
+The content of this repository is a mix between my regular [dotfiles](https://github.com/gerardbm/dotfiles.git) and my vim setup ([vimrc](https://github.com/gerardbm/vimrc.git)), adapted to be used under 32 bits systems and refined to remain fast, stable and minimalist.
 
 Configuration files:
 
@@ -60,7 +62,7 @@ Configuration files:
 
 ### i3
 
-Install it from the repositories:
+Install the version 4.22 from the repositories:
 
 `sudo apt-get install i3`
 
@@ -92,7 +94,7 @@ Useful tools: uuid, fbreader, simplescreenrecorder, translate-shell, trash-cli
 
 ### Zsh
 
-Install it from the repositories:
+Install the version 5.9 from the repositories:
 
 `sudo apt-get install zsh`
 
@@ -112,9 +114,9 @@ Enable zsh-syntax-highlighting:
 
 `git clone https://github.com/zsh-users/zsh-syntax-highlighting $HOME/.syntax`
 
-Enable zsh-autosuggestions:
+<!-- Enable zsh-autosuggestions: -->
 
-`git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions`
+<!-- `git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions` -->
 
 Symlink the zsh settings:
 
@@ -128,9 +130,9 @@ Log out and log in to see the new shell as default.
 
 ### URxvt
 
-Install it from the repositories:
+Install the version 9.30 from the repositories:
 
-`sudo apt-get install rxvt-unicode-256color`
+`sudo apt-get install rxvt-unicode`
 
 Symlink the rxvt-unicode settings:
 
@@ -151,13 +153,9 @@ To check for newer versions on Github:
 
 ### Tmux
 
-The version from the repositories is too old. Install it from the source code:
+Install the version 3.3a from the repositories:
 
-1. Download a tar.gz from github.
-2. Unzip: `tar -zxvf tmux-2.7.tar.gz`
-3. Join to the directory created: `cd tmux-2.7`
-4. Compile it: `./configure; make; sudo checkinstall`
-5. Install the required dependencies and repeat the `./configure`
+`sudo apt-get install tmux`
 
 Then, install the package `urlview`:
 
@@ -169,7 +167,7 @@ Symlink the tmux settings:
 
 ### Git
 
-Install it from the repositories:
+Install the version 2.39.5 from the repositories:
 
 `sudo apt-get install git`
 
@@ -199,9 +197,9 @@ Install it from the repositories:
 
 (Not using anymore, though).
 
-### Vim 8
+### Vim
 
-Install it from the repositories (the stable version is enough):
+Install the version 9.0 from the repositories (the stable version is enough):
 
 `sudo apt-get install vim vim-gtk3`
 
@@ -220,44 +218,15 @@ Install the plugins with the command:
 
 To make it compatible with the plugin `Shougo/deoplete.nvim`, it requires two plugins (`roxma/vim-hug-neovim-rpc` and `roxma/nvim-yarp`) that require neovim installed from pip3, so first install python3-pip and then install neovim from there:
 
-`sudo apt-get install python3-pip`
+`sudo apt-get install neovim`
 
-`pip3 install neovim`
+This will install `pynvim`. If not, try:
 
 `pip3 install pynvim`
 
-From the Vim command line:
+Then from the Vim command line, execute:
 
 `:pythonx import pynvim`
-
-My vim config files are into [vimrc](https://github.com/gerardbm/vimrc).
-
-### Neovim
-
-Neovim is available from github, so download the AppImage from the releases section.
-
-Move the file `nvim.appimage` to `/opt/neovim/`:
-
-`sudo mv nvim.appimage /opt/neovim/`
-
-Join to the folder and create the symlink:
-
-`sudo ln -sf /opt/neovim/nvim.appimage /usr/local/bin/nvim`
-
-Give permissions to the file:
-
-`sudo chmod 755 /opt/neovim/nvim.appimage`
-
-A desktop file is not needed because it's a terminal application.
-
-Finally, install [vim-plug](https://github.com/junegunn/vim-plug) for neovim using this command:
-
-```sh
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-My neovim config files are into [vimrc](https://github.com/gerardbm/vimrc).
 
 ### Clang
 
@@ -283,13 +252,13 @@ Note: check pyenv to install other Python versions.
 
 Install pylint from pip3:
 
-`sudo pip3 install pylint`
+`pip3 install pylint`
 
 ### Vint
 
 Install vint from pip3:
 
-`sudo pip3 install vim-vint`
+`pip3 install vim-vint`
 
 ### Shellcheck
 
@@ -305,23 +274,9 @@ Install chktex from the repositories:
 
 ### Nodejs, tern, jshint, csslint
 
-Download Node.js from [https://nodejs.org](https://nodejs.org).
+Install node from the repositoies:
 
-Unzip the binary archive (v.10.15.3 in my case):
-
-```sh
-sudo mkdir /usr/lib/nodejs
-sudo tar -xJvf node-v10.15.3-linux-x64.tar.xz -C /usr/lib/nodejs
-sudo mv /usr/lib/nodejs/node-v10.15.3-linux-x64 /usr/lib/nodejs/node-v10.15.3
-```
-
-Symlink the executables:
-
-```sh
-sudo ln -s /usr/lib/nodejs/node-v10.15.3/bin/node /usr/bin/node
-sudo ln -s /usr/lib/nodejs/node-v10.15.3/bin/npx /usr/bin/npx
-sudo ln -s /usr/lib/nodejs/node-v10.15.3/bin/npm /usr/bin/npm
-```
+`sudo apt-get install nodejs npm`
 
 Test the installation using:
 
@@ -492,22 +447,23 @@ cp atomic/vifm/atomic.vifm $HOME/.config/vifm/colors/
 
 ### FZF
 
-Install it following the instructions from [fzf Github page](https://github.com/junegunn/fzf/).
+Install it from the repositories:
 
-```sh
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-```
+`sudo apt-get install fzf`
+
+Clone the Github repository to the `~/.fzf`.
+
+`git clone https://github.com/junegunn/fzf.git ~/.fzf`
+
+Change the branch:
+
+`git checkout 0.47.0`
 
 ### Ytfzf
 
-Install it following the instructions from [ytfzf Github page](https://github.com/pystardust/ytfzf/).
+Install it from the repositories:
 
-```sh
-git clone https://github.com/pystardust/ytfzf
-cd ytfzf
-sudo make install
-```
+`sudo apt-get install ytfzf`
 
 ### Mutt
 
@@ -584,10 +540,6 @@ Download it from the repositories:
 Update it to the last version:
 
 `sudo -H pip install --upgrade youtube-dl`
-
-<!-- ### VirtualBox -->
-
-<!-- Packages for VirtualBox are not available in Debian 9. To install VirtualBox you must use the stretch-backports repository or the upstream third-party repository. More info, here: https://wiki.debian.org/VirtualBox. -->
 
 ## Navigation
 
