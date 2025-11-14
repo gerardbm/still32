@@ -482,7 +482,7 @@ autocmd FileType markdown,liquid let b:surround_{char2nr('y')} = "<a href=\"\"
 			\ rel=\"noopener noreferrer\" target=\"_blank\">\r<\/a>"
 
 " Caps Lock settings
-imap <expr><C-l> deoplete#smart_close_popup()."\<Plug>CapsLockToggle"
+imap <C-l> <Plug>CapsLockToggle
 cmap <silent> <C-l> <Plug>CapsLockToggle
 
 " Expand region settings
@@ -972,10 +972,10 @@ inoremap <C-a> <C-O>0
 inoremap <C-e> <C-O>$
 
 " Moves the cursor back one character
-inoremap <expr><C-b> deoplete#smart_close_popup()."\<Left>"
+inoremap <C-b> <Left>
 
 " Moves the cursor forward one character
-inoremap <expr><C-f> deoplete#smart_close_popup()."\<Right>"
+inoremap <C-f> <Right>
 
 " Remove one character
 inoremap <C-d> <DEL>
