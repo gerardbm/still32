@@ -24,4 +24,4 @@ configuration {
 	kb-row-up: "Control+k";
 }
 
-@theme "atomic"
+@theme "cosmic"
