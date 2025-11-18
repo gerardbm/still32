@@ -15,7 +15,7 @@ configuration {
 
 	/* MODES */
 	kb-mode-complete: "";
-	kb-mode-next: "Control+n,Control+Tab";
+	kb-mode-next: "Control+n,Control+Tab,Control+l";
 	kb-mode-previous: "Control+p";
 
 	/* ROWS */
@@ -24,4 +24,4 @@ configuration {
 	kb-row-up: "Control+k";
 }
 
-@theme "cosmic"
+@theme "themes/cosmic"
