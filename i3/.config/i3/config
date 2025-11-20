@@ -332,7 +332,7 @@ bindsym $mod+$alt+8 exec --no-startup-id xsct 5278 && \
 	notify-send -t 2000 'Xsct: 5278'
 bindsym $mod+$alt+9 exec --no-startup-id xsct 5889 && \
 	notify-send -t 2000 'Xsct: 5889'
-bindsym $mod+$alt+0 exec --no-startup-id xsct && \
+bindsym $mod+$alt+0 exec --no-startup-id xsct 6500 && \
 	notify-send -t 2000 'Xsct: 6500 (reset)'
 
 # Screen rotation
