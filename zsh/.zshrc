@@ -90,10 +90,10 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 # eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 # Pyenv path
-# export PATH="$HOME/.pyenv/bin:$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
- 
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # Aliases:
 # For a full list of active aliases, run `alias`.
 # --------------------------------------------------
