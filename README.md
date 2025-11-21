@@ -541,6 +541,14 @@ Update it to the last version:
 
 `sudo -H pip install --upgrade youtube-dl`
 
+### Calibre
+
+I prefer to use the version 2.75.1 in this device, so I downloaded the file `calibre-2.75.1-i686.txz`. The next steps are these:
+
+- Unpack: `tar Jxvf calibre-2.75.1-i686.txz`
+- Move the folder into `/opt/calibre_2.75.1/`
+- Create the symlink with `ln -s`
+
 ## Navigation
 
 All shortcuts are vim-style (H, J, K, L + U, D) and they are configured to work without conflicts coherently between i3wm, tmux, (neo)vim et al. Explanation:
