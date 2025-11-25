@@ -74,6 +74,9 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Stop quoting filenames with spaces
+export QUOTING_STYLE=literal
+
 # Paths
 # --------------------------------------------------
 # Local bin path
